@@ -1,5 +1,7 @@
-import * as Chart from './Chart';
+import Chart from './Chart';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     
+    
+
 });

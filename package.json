@@ -12,7 +12,7 @@
     "agile"
   ],
   "scripts": {
-    "start": "tsc && nodemon ./dist/api/index.js localhost 8080 && tsc -w"
+    "start": "rm -rf dist tsc && shell-exec 'nodemon ./dist/api/index.js localhost 8080' 'tsc -w'"
   },
   "config": {
     "supportedBrowsers": [
