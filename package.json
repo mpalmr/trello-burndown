@@ -1,0 +1,37 @@
+{
+  "name": "trello-burndown",
+  "version": "0.0.0",
+  "description": "A scrum burndown chart",
+  "author": "Matthew Palmer <mspalmer91@gmail.com>",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "scrum",
+    "burndown",
+    "chart",
+    "agile"
+  ],
+  "scripts": {
+    "start": "tsc && nodemon ./dist/api/index.js localhost 8080 && tsc -w"
+  },
+  "config": {
+    "supportedBrowsers": [
+      "last 2 versions",
+      "ie >= 10"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "0.0.30",
+    "@types/d3": "0.0.31",
+    "@types/express": "^4.0.30",
+    "@types/node": "^6.0.31",
+    "d3": "^4.2.1",
+    "nodemon": "^1.10.0",
+    "shell-executor": "^0.3.2",
+    "typescript": "^2.1.0-dev.20160805"
+  }
+}

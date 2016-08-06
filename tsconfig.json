@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es6",
+        "outDir": "dist/api",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "removeComments": true,
+        "pretty": true
+    },
+    "files": [
+        "src/api/index.ts",
+        "src/client/index.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
