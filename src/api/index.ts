@@ -10,5 +10,6 @@ app.use("/api", router);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-router.get("/", (req: express.Request, res: express.Response) =>
-    res.json({ message: "Hooray! Welcome to our API." }));
+router.get("/board", (req: express.Request, res: express.Response) => {
+    
+});

@@ -4,30 +4,34 @@ interface Schema {
     heading: String;
 }
 
-interface Plot {
+interface Graph {
+    markers: Array<Marker>;
+    label: string;
     color: String | null;
+}
+
+interface Marker {
+    x: Number,
+    y: Number,
 }
 
 
 export default class Chart {
-    
-    public elements: Array<Element>;
+    public element: Element;
     public schema: Schema;
-    public plot: Array<Plot>;
+    public graphs: Array<Graph>;
 
-    constructor(elements: string | Element | NodeList, schema: Schema, plot: Array<Plot>) {
-        this.elements = Chart.parseTarget(elements);
+    constructor(element: Element, schema: Schema, graphs: Array<Graph>) {
+        this.element = element;
         this.schema = schema;
-        this.plot = plot;
+        this.graphs = graphs;
     }
 
-    /**
-     *
-     */
-    private static parseTarget(elements: string | Element | NodeList): Array<Element> {
-        if (typeof elements === "string") return Array.from(document.querySelectorAll(elements));
-        if (typeof elements === "NodeList") return Array.from(<NodeListOf<Element>>elements);
-        if (elements instanceof Element) return [elements];
-        throw new TypeError("Invalid target to initialize chart on.");
+    private get width(): Number {
+        return this.element.clientWidth;
+    }
+
+    private get height(): Number {
+        return this.element.clientHeight;
     }
 }
