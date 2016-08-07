@@ -1,10 +1,12 @@
 import Chart from "./Chart";
+
 declare const Trello: any;
+declare const $: any;
+declare const jQuery: any;
 
 document.addEventListener("DOMContentLoaded", function () {
 
     Trello.authorize({
-        type: "popup",
         name: "Trello Burndown",
         success: onAuthorizationSuccess,
     });
