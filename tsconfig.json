@@ -12,8 +12,7 @@
         "newLine": "LF"
     },
     "files": [
-        "src/api/index.ts",
-        "src/client/index.ts"
+        "src/api/index.ts"
     ],
     "exclude": [
         "node_modules",
