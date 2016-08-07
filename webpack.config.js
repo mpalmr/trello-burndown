@@ -24,7 +24,13 @@ const BASE_CONFIG = {
         root: PATH.src,
         extensions: ['', '.js', '.ts'],
     },
-    plugins: [bundles.style],
+    plugins: [
+        bundles.style,
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        }),
+    ],
     module: {
         loaders: [
             {
@@ -36,7 +42,7 @@ const BASE_CONFIG = {
                 test: /\.s?css$/,
                 include: PATH.src,
                 loader: bundles.style.extract('style', 'css?sourceMap!resolve-url!postcss!sass?sourceMap'),
-            }
+            },
         ],
     },
     postcss: () => [autoprefixer(PKG.config.supportedBrowsers)],

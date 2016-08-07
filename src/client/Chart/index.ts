@@ -1,37 +1,30 @@
+import "./chart.scss";
 import * as d3 from "d3";
-
-interface Schema {
-    heading: String;
-}
 
 interface Graph {
     markers: Array<Marker>;
     label: string;
-    color: String | null;
+    color: String | undefined;
 }
 
 interface Marker {
-    x: Number,
-    y: Number,
+    x: Number;
+    y: Number;
+}
+
+interface Options {
+    heading: String;
 }
 
 
 export default class Chart {
     public element: Element;
-    public schema: Schema;
     public graphs: Array<Graph>;
+    public options: Options;
 
-    constructor(element: Element, schema: Schema, graphs: Array<Graph>) {
+    constructor(element: Element, graphs: Array<Graph>, options: Options) {
         this.element = element;
-        this.schema = schema;
         this.graphs = graphs;
-    }
-
-    private get width(): Number {
-        return this.element.clientWidth;
-    }
-
-    private get height(): Number {
-        return this.element.clientHeight;
+        this.options = options;
     }
 }

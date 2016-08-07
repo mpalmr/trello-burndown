@@ -12,7 +12,7 @@
     "agile"
   ],
   "scripts": {
-    "start": "rm -rf dist && tsc && shell-exec 'tsc -w' 'webpack-dev-server' 'nodemon ./dist/api/index.js localhost 8080' ",
+    "start": "rm -rf dist && tsc && shell-exec 'tsc -w' 'webpack-dev-server' 'nodemon ./dist/api/index.js localhost 8080'",
     "build": "shell-exec 'webpack -p' 'tsc'"
   },
   "config": {
@@ -36,6 +36,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "jquery": "^3.1.0",
+    "node-sass": "^3.8.0",
     "nodemon": "^1.10.0",
     "postcss-loader": "^0.9.1",
     "resolve-url-loader": "^1.6.0",

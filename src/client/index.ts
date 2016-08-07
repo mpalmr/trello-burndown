@@ -1,4 +1,4 @@
-import * as chart from "./Chart";
+import Chart from "./Chart";
 declare const Trello: any;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function onAuthorizationSuccess(): void {
-
+        console.log("Success");
     }
 });
