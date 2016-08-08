@@ -1,7 +1,11 @@
-import TrelloClient from "./TrelloClient";
+import TrelloApi from "./TrelloApi";
 import Chart from "./Chart";
 
 document.addEventListener("DOMContentLoaded", function () {
-    const trelloClient = new TrelloClient();
-    console.log(new Map());
+    TrelloApi.client.authorize()
+        .then(() => TrelloApi.client.getBoards()
+            .then((boards: Object[]) =>
+        {
+            console.log(boards);
+        }));
 });

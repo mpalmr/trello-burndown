@@ -2,26 +2,26 @@ import "./chart.scss";
 import * as d3 from "d3";
 
 interface Graph {
-    markers: Array<Marker>;
+    markers: Marker[];
     label: string;
-    color?: String;
+    color?: string;
 }
 
 interface Marker {
-    x: Number;
-    y: Number;
+    x: number;
+    y: number;
 }
 
 interface Options {
-    heading: String;
+    heading: string;
 }
 
 
 export default class Chart {
     public element: Element;
-    public graphs: Array<Graph>;
+    public graphs: Graph[];
 
-    constructor(element: Element, graphs: Array<Graph>, options?: Options) {
+    constructor(element: Element, graphs: Graph[], options?: Options) {
         this.element = element;
         this.graphs = graphs;
     }
