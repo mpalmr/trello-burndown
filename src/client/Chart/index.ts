@@ -4,7 +4,7 @@ import * as d3 from "d3";
 interface Graph {
     markers: Array<Marker>;
     label: string;
-    color: String | undefined;
+    color?: String;
 }
 
 interface Marker {
@@ -20,11 +20,9 @@ interface Options {
 export default class Chart {
     public element: Element;
     public graphs: Array<Graph>;
-    public options: Options;
 
-    constructor(element: Element, graphs: Array<Graph>, options: Options) {
+    constructor(element: Element, graphs: Array<Graph>, options?: Options) {
         this.element = element;
         this.graphs = graphs;
-        this.options = options;
     }
 }
