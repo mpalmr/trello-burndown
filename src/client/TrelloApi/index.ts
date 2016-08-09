@@ -1,4 +1,2 @@
-import { authorize } from "./client";
-import Board from "./Board";
-
-export default { authorize, Board };
+export { authorize } from "./client";
+export { default as Board } from "./Board";

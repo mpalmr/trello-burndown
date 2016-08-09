@@ -4,7 +4,7 @@ export function authorize(): Promise<void> {
     return new Promise<void>((resolve: () => void, reject: () => void) => {
         Trello.authorize({
             name: "Trello Burndown",
-            persist: false,
+            // persist: false,
             success: () => {
                 resolve();
             },
@@ -13,7 +13,7 @@ export function authorize(): Promise<void> {
     });
 }
 
-export function throwTrelloError(reject: () => void, message: string): void {
+export function throwTrelloError(reject: () => void, message: string) {
     console.error(message);
     if (reject) reject();
 }
