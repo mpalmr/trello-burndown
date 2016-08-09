@@ -17,6 +17,7 @@
         "src/client/TrelloApi/index.ts",
         "src/client/TrelloApi/client.ts",
         "src/client/TrelloApi/Board.ts",
+        "src/client/TrelloApi/Member.ts",
         "src/client/Chart/index.ts"
     ],
     "exclude": [

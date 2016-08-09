@@ -47,8 +47,8 @@ export default class Board {
 
     public static get(): Promise<Board[]> {
         return new Promise<Board[]>((resolve: (boards: Board[]) => void, reject: () => void) => {
-            Trello.get("/member/me/boards", ((boards: BoardResponse[]) => {
-                resolve(boards.map((board: BoardResponse) => new Board(board)));
+            Trello.get("/member/me/boards", ((responses: BoardResponse[]) => {
+                resolve(responses.map((a: BoardResponse) => new Board(a)));
             }), throwTrelloError.bind(reject));
         });
     }
