@@ -1,3 +1,6 @@
+import { throwTrelloError } from "./client";
+declare const Trello: any;
+
 export default class Board {
     public id: string;
     public name: string;
@@ -41,10 +44,18 @@ export default class Board {
             isTiled: board.prefs.backgroundTile || false,
         };
     }
+
+    private static get(): Promise<void> {
+        return new Promise<Board[]>((resolve: (boards: Board[]) => void, reject: () => void) => {
+            Trello.get("/member/me/boards", ((boards: BoardResponse[]) => {
+                resolve(boards.map((board: BoardResponse) => new Board(board)));
+            }), throwTrelloError.bind(reject));
+        });
+    }
 }
 
 
-export interface BoardResponse {
+interface BoardResponse {
     id: string;
     name: string;
     desc: string;

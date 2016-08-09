@@ -1,11 +1,13 @@
-import TrelloApi from "./TrelloApi";
+import * as TrelloApi from "./TrelloApi";
 import Chart from "./Chart";
 
 document.addEventListener("DOMContentLoaded", function () {
-    TrelloApi.client.authorize()
-        .then(() => TrelloApi.client.getBoards()
-            .then((boards: Object[]) =>
-        {
-            console.log(boards);
-        }));
+    console.log(TrelloApi.Board);
+    function doStuff(thing: TrelloApi.Board): void {
+        console.log(thing);
+    }
+    // TrelloApi.authorize().then((): Promise<Array<TrelloApi.Board>> => TrelloApi.Board.get()
+    //     .then((boards: Array<TrelloApi.Board>): void => {
+    //         console.log(boards);
+    //     }));
 });

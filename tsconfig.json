@@ -15,7 +15,7 @@
         "src/api/index.ts",
         "src/client/index.ts",
         "src/client/TrelloApi/index.ts",
-        "src/client/TrelloApi/Client.ts",
+        "src/client/TrelloApi/client.ts",
         "src/client/TrelloApi/Board.ts",
         "src/client/Chart/index.ts"
     ],
